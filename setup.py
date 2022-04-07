@@ -17,6 +17,7 @@ setup(
         'Django'
     ],
     long_description=Path('README.md', encoding='utf8').read_text(),
+    long_description_content_type='text/markdown',
     url='https://github.com/JonnoFTW/django-sql-log-middleware',
     license='MIT',
     author='JonnoFTW',
