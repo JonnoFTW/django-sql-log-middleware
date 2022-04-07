@@ -24,7 +24,7 @@ class SqlLogMiddleware(Parent):
             return response
         path_re = getattr(settings, 'SQLLOG_PATH_RE', r".*")
         output_path = getattr(settings, "SQLLOG_LOG", "django_queries.jsonl")
-        runnable = settings.DEBUG or settings.TESTING
+        runnable = getattr(settings, 'DEBUG', False) or getattr(settings, 'TESTING', False)
         if should_run and runnable and re.search(path_re, request.path):
             queries = connection.queries
             if len(queries) > 0:
