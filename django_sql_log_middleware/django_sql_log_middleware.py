@@ -47,7 +47,7 @@ class SqlLogMiddleware(Parent):
         """
 
         data = {
-            "path": request.path,
+            "path": request.get_full_path(),
             "time": int(time.time()),
             "queries": [
                 q for q in queries
