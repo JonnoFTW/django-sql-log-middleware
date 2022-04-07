@@ -9,7 +9,6 @@ from setuptools import setup
 
 version = '0.1.0'
 
-
 setup(
     name='django-sql-log-middleware',
     version=version,
