@@ -58,4 +58,4 @@ class SqlLogMiddleware(Parent):
         if getattr(settings, 'SQLLOG_LOG_POST', False):
             data['POST'] = request.POST
         with open(output_path, 'a') as out_file:
-            out_file.write(json.dumps(data) + "\n")
+            out_file.write(json.dumps(data, default=lambda o: '<not serializable>') + "\n")
