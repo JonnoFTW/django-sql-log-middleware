@@ -44,3 +44,5 @@ Specify the following settings in your settings.py file:
 * **SQLLOG_MIDDLEWARE** set this variable to `False` disable the middleware without removal. Defaults to `True`
 * **SQLLOG_PATH_RE** a regex pattern to only log SQL queries in hte matched path(s). Defaults to `.*`
 * **SQLLOG_LOG** the file to write out the logs to. Defaults to `django_queries.jsonl`
+* **SQLLOG_LOG_POST** log `request.POST` data. Defaults to `False`
+* **SQLLOG_LOG_META** log `request.META` data. Defaults to `False`

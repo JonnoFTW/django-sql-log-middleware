@@ -53,5 +53,9 @@ class SqlLogMiddleware(Parent):
                 q for q in queries
             ]
         }
+        if getattr(settings, 'SQLLOG_LOG_META', False):
+            data['META'] = request.META
+        if getattr(settings, 'SQLLOG_LOG_POST', False):
+            data['POST'] = request.POST
         with open(output_path, 'a') as out_file:
             out_file.write(json.dumps(data) + "\n")
