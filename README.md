@@ -22,7 +22,7 @@ MIDDLEWARE = [
 
 ## Output
 
-Output will be written to the path specified in `SQLLOG_LOGFILE` in the below format. Each line is a JSON object
+Output will be written to the path specified in `SQLLOG_LOG` in the below format. Each line is a JSON object
 covering a single request. Time is the current unix time. Query time is measured in seconds.
 
 ```json
